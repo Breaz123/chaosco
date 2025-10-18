@@ -1,6 +1,6 @@
 // /app/community/[id]/page.tsx
 import { supabaseServer } from "@/lib/supabase_server";
-import Comments from "./realtime-comments.js";
+import Comments from "./realtime-comments";
 
 export default async function Post({ params:{id} }:{ params:{id:string} }){
   const sb = await supabaseServer();
