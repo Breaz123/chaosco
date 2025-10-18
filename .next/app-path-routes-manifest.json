@@ -1,11 +1,11 @@
 {
-  "/_not-found/page": "/_not-found",
   "/api/checkout/route": "/api/checkout",
+  "/_not-found/page": "/_not-found",
   "/auth/callback/route": "/auth/callback",
   "/api/newsletter/route": "/api/newsletter",
-  "/community/[id]/page": "/community/[id]",
   "/tools/page": "/tools",
   "/community/page": "/community",
+  "/learn/[slug]/page": "/learn/[slug]",
   "/learn/page": "/learn",
-  "/learn/[slug]/page": "/learn/[slug]"
+  "/community/[id]/page": "/community/[id]"
 }
