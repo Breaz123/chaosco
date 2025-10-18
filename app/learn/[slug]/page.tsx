@@ -2,15 +2,13 @@ import { supabaseServer } from "@/lib/supabase_server";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-export async function generateStaticParams(){
-  const supabase = await supabaseServer();
-  const { data } = await supabase.from("lessons").select("slug");
-  return data?.map(d=>({ slug: d.slug })) ?? [];
-}
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 
-export default async function Lesson({ params }: { params: { slug: string } }){
+export default async function Lesson({ params }: { params: Promise<{ slug: string }> }){
+  const { slug } = await params;
   const supabase = await supabaseServer();
-  const { data: lesson } = await supabase.from("lessons").select("*").eq("slug", params.slug).single();
+  const { data: lesson } = await supabase.from("lessons").select("*").eq("slug", slug).single();
 
   if(!lesson) return <div className="p-10">Niet gevonden</div>;
 

@@ -1,1 +1,11 @@
-{}
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/checkout/route": "app/api/checkout/route.js",
+  "/auth/callback/route": "app/auth/callback/route.js",
+  "/api/newsletter/route": "app/api/newsletter/route.js",
+  "/community/[id]/page": "app/community/[id]/page.js",
+  "/tools/page": "app/tools/page.js",
+  "/community/page": "app/community/page.js",
+  "/learn/page": "app/learn/page.js",
+  "/learn/[slug]/page": "app/learn/[slug]/page.js"
+}

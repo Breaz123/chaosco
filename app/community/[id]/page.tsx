@@ -2,7 +2,8 @@
 import { supabaseServer } from "@/lib/supabase_server";
 import Comments from "./realtime-comments";
 
-export default async function Post({ params:{id} }:{ params:{id:string} }){
+export default async function Post({ params }:{ params: Promise<{id:string}> }){
+  const { id } = await params;
   const sb = await supabaseServer();
   const { data: post } = await sb.from("posts").select("*").eq("id", id).single();
   return (
